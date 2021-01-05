@@ -1,7 +1,11 @@
 :root {
   --primary-white: #fff;
+  --primary-gray: rgba(255, 255, 255, 0.3);
   --primary-orange: #f9ab00;
   --primary-dark: rgba(255, 255, 255, 0);
+  --primary-red: #ef4035;
+  --primary-hover-red: #f33501;
+  --header-background: #0000008c;
 }
 
 .logo {
@@ -10,6 +14,10 @@
 }
 
 /* Meni links*/
+
+nav {
+  z-index: 2;
+}
 
 nav a.nav-link {
   letter-spacing: 0.0375rem;
@@ -40,4 +48,80 @@ nav ul li {
 
 .navbar-nav > li > a:hover {
   border-top: 0.1875rem solid var(--primary-orange);
+}
+
+// HEADER
+.header-wrapper {
+  background-color: color(--header-background);
+  background-position: center center !important;
+  background-size: cover  !important;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, -1)), url(header-wallpaper.png) no-repeat;
+  height: 90vh;
+  padding: 30px;
+  position: relative;
+
+  .main-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40%;
+    z-index: 1;
+
+    h1{
+      color: var(--primary-orange);
+      text-transform: uppercase;
+    }
+  }
+
+  .typed-text {
+    font-size: 2rem;
+    color: var(--primary-white);
+  }
+
+  .btn-main-offer {
+    border: 1px solid var(--primary-red);
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 0.625rem 0.75rem;
+    color: var(--primary-white);
+    margin: 2rem;
+
+    &:hover {
+      text-decoration: none;
+      background-color: var(--primary-hover-red);
+      color: var(--primary-white);
+      transition: .2s ease-in-out;
+    }
+  }
+}
+
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+@media(max-width: 768px) {
+  .navbar-brand {
+    width: 7rem;
+  }
+
+  .particles-canvas {
+    display: none;
+  }
+
+  .main-info h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .typed-text {
+    font-size: 1.7rem !important;
+  }
 }
